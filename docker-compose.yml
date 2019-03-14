@@ -13,10 +13,14 @@ services:
       - reverse-proxy
       - back
     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=test.anhdh.com
       - LETSENCRYPT_HOST=test.anhdh.com
       - LETSENCRYPT_EMAIL=anhdhbn@gmail.com
+#    volumes:
+#      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+#      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
 networks:
   reverse-proxy:
