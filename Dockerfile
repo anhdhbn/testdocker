@@ -18,6 +18,7 @@ RUN dotnet restore "TestDocker/TestDocker.csproj"
 
 WORKDIR "/src/TestDocker"
 COPY . .
+RUN cat TestDocker/Views/Home/Index.cshtml
 RUN dotnet build "TestDocker.csproj" -c Release -o /app
 
 FROM build AS publish
